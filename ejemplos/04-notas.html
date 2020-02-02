@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToneJS - 04 notas</title>
+    <script src="../lib/Tone.js"></script>
+    <script src="../lib/Rhythm.js"></script>
+  </head>
+  <body>
+    <button id="notas">NOTAS</button>
+  </body>
+  <script type="text/javascript">
+
+    var synth = new Tone.Synth().toMaster();
+
+    document.querySelector("#notas").addEventListener("click", async () => {
+
+      var notas = [
+        "C4","D4","E4","F4","G4","A4","B4","C5"];
+      var duraciones = [
+        "2n","4n","8n","16n","16n","8n","4n","2n"];
+
+      var cancion = Rhythm.mergeDurationsAndPitch(duraciones, notas);
+      console.log(cancion);
+
+      var part = new Tone.Part(function(time, value){
+        console.log(value.note + " " + value.duration);
+        synth.triggerAttackRelease(value.note, value.duration, time);
+      }, cancion );
+      
+      part.start(0);
+      Tone.Transport.start();
+    });
+  </script>
+</html>

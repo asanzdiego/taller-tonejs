@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToneJS - 01 una nota</title>
+    <script src="../lib/Tone.js"></script>
+  </head>
+  <body>
+    <button id="do">UNA NOTA</button>
+  </body>
+  <script type="text/javascript">
+
+    const synth = new Tone.Synth().toMaster();
+    Tone.Transport.start();
+    
+    document.querySelector("#do").addEventListener("click", async () => {
+      synth.triggerAttackRelease("C4", "4n");
+    });
+  </script>
+</html>

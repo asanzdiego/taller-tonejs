@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToneJS - 02 varias notas</title>
+    <script src="../lib/Tone.js"></script>
+  </head>
+  <body>
+    <button id="do">DO</button>
+    <button id="re">RE</button>
+    <button id="mi">MI</button>
+    <button id="fa">FA</button>
+    <button id="sol">SOL</button>
+    <button id="la">LA</button>
+    <button id="si">SI</button>
+    <button id="do2">DO</button>
+  </body>
+  <script type="text/javascript">
+
+    const synth = new Tone.Synth().toMaster();
+    Tone.Transport.start();
+    
+    document.querySelector("#do").addEventListener("click", async () => {
+      synth.triggerAttackRelease("C4", "8n");
+    });
+    
+    document.querySelector("#re").addEventListener("click", async () => {
+      synth.triggerAttackRelease("D4", "8n");
+    });
+
+    document.querySelector("#mi").addEventListener("click", async () => {
+      synth.triggerAttackRelease("E4", "8n");
+    });
+
+    document.querySelector("#fa").addEventListener("click", async () => {
+      synth.triggerAttackRelease("F4", "8n");
+    });
+
+    document.querySelector("#sol").addEventListener("click", async () => {
+      synth.triggerAttackRelease("G4", "8n");
+    });
+
+    document.querySelector("#la").addEventListener("click", async () => {
+      synth.triggerAttackRelease("A4", "8n");
+    });
+
+    document.querySelector("#si").addEventListener("click", async () => {
+      synth.triggerAttackRelease("B4", "8n");
+    });
+
+    document.querySelector("#do2").addEventListener("click", async () => {
+      synth.triggerAttackRelease("C5", "8n");
+    });
+  </script>
+</html>

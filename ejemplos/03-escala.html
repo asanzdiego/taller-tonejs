@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToneJS - 03 escala</title>
+    <script src="../lib/Tone.js"></script>
+  </head>
+  <body>
+    <button id="escala">ESCALA</button>
+  </body>
+  <script type="text/javascript">
+
+    const synth = new Tone.Synth().toMaster();
+    
+    document.querySelector("#escala").addEventListener("click", async () => {
+      synth.triggerAttackRelease("C4", "8n", 1);
+      synth.triggerAttackRelease("D4", "8n", 2);
+      synth.triggerAttackRelease("E4", "8n", 3);
+      synth.triggerAttackRelease("F4", "8n", 4);
+      synth.triggerAttackRelease("G4", "8n", 5);
+      synth.triggerAttackRelease("A4", "8n", 6);
+      synth.triggerAttackRelease("B4", "8n", 7);
+      synth.triggerAttackRelease("C5", "8n", 8);
+
+      Tone.Transport.start();
+    });
+  </script>
+</html>
