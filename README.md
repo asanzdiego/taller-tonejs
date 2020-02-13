@@ -1,8 +1,10 @@
 # Taller de iniciación a ToneJS
 
-Hace poco he ayudado a montar el <a href="https://zen.coderdojo.com/dojos/es/madrid/carabanchel-madrid-biblioteca-luis-rosales">CoderDojo de Carabanchel</a>, que es un club de programación donde niños y niñas de entre 7 y 17 años aprenden a programar ayudados por mentores. Nos reunimos los sábados por la tarde, y yo intento ir siempre que puedo con mis dos hijas. Además,  a veces preparo talleres. Al principio preparé un <a href="https://www.asanzdiego.com/2019/11/recursos-de-mi-taller-iniciacion-al-creative-coding-con-p5js-en-el-commitconf.html">taller de p5js, que es una librería de JavaScript para crear arte interactivo en el navegador</a> que gustó bastante, y ahora he preparado un taller de <a href="https://tonejs.github.io/">ToneJS una librería JavaScript para crear música interactiva en el navegador</a>. Este último taller está muy relacionado con un artículo que escribí hace justo un año en dónde explicaba <a href="https://www.asanzdiego.com/2019/02/programando-la-musica-de-star-wars-con-gibber.html">cómo programar la música de Star Wars con Gibber</a>.
+## Introducción
 
-Tenéis todo el código  y las librerías que necesitáis en un <a href="https://github.com/asanzdiego/taller-tonejs">repositorio de mi GitHub</a>.
+Hace poco he ayudado a montar el <a href="https://zen.coderdojo.com/dojos/es/madrid/carabanchel-madrid-biblioteca-luis-rosales">CoderDojo de Carabanchel</a>, que es un club de programación donde niños y niñas de entre 7 y 17 años aprenden a programar ayudados por mentores. Nos reunimos los sábados por la tarde, y yo intento ir siempre que puedo con mis dos hijas. Además, a veces preparo talleres. Al principio preparé un <a href="https://www.asanzdiego.com/2019/11/recursos-de-mi-taller-iniciacion-al-creative-coding-con-p5js-en-el-commitconf.html">taller de p5js, que es una librería de JavaScript para crear arte interactivo en el navegador</a> que gustó bastante, y ahora he preparado un taller de <a href="https://tonejs.github.io/">ToneJS, una librería JavaScript para crear música interactiva en el navegador</a>. Este último taller está muy relacionado con un artículo que escribí hace tiempo en dónde explicaba <a href="https://www.asanzdiego.com/2019/02/programando-la-musica-de-star-wars-con-gibber.html">cómo programar la música de Star Wars con Gibber</a>.
+
+## Ejemplo 1 (una nota)
 
 Este es el código más básico para crear un botón que al pulsarlo haga sonar una nota, en este caso un DO, en el navegador:
 
@@ -28,11 +30,8 @@ Este es el código más básico para crear un botón que al pulsarlo haga sonar 
   &lt;/script&gt;
 &lt;/html&gt;</pre>
 
-Puedes [abrir el ejemplo 01 directamente](https://asanzdiego.github.io/taller-tonejs/ejemplos/01-una-nota.html) o
-ver el resultado a continuación (pulsa el botón para probar):
+[01-una-nota.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/01-una-nota.html).
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/01-una-nota.html" width="140"></iframe></div>
 En este punto hay que remarcar que las notas se ponen en el estilo anglosajón:
 
 <ul>
@@ -46,6 +45,8 @@ En este punto hay que remarcar que las notas se ponen en el estilo anglosajón:
 </ul>
 
 El número que sigue a la nota hace referencia a la octava (ya sea esta más grave o más aguda).
+
+## Ejemplo 2 (piano con botones)
 
 A continuación, parte del código para hacer una especie de piano con botones:
 
@@ -80,12 +81,11 @@ A continuación, parte del código para hacer una especie de piano con botones:
   &lt;/script&gt;
 &lt;/html&gt;</pre>
 
-El resultado es el siguiente (pulsa los botones para probar) 
+[02-varias-notas.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/02-varias-notas.html).
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/02-varias-notas.html" width="460"></iframe></div>
+## Ejemplo 03 (escala)
+
 A continuación mostramos el código para que suene una escala:
-
 
 <pre style="background: #f0f0f0; border: 1px dashed #CCCCCC;">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -115,12 +115,12 @@ A continuación mostramos el código para que suene una escala:
     });
   &lt;/script&gt;
 &lt;/html&gt;</pre>
-El resultado es el siguiente (pulsa el botón para probar):
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/03-escala.html" width="140"></iframe></div>
+[03-escala.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/03-escala.html).
+
+## Ejemplo 4 (varias notas con duraciones diferentes)
+
 Ahora hacemos algo un poco más elaborado utilizamos 2 arrays: uno para las notas y otro para las duraciones de las notas.
-
 
 Aquí hay que remarcar que para los tiempos hay que tener en cuenta que:
 
@@ -131,8 +131,8 @@ Aquí hay que remarcar que para los tiempos hay que tener en cuenta que:
 <li>8n hace referencia a una corchea (0,5 tiempos)</li>
 <li>16n hace referencia a una semicorchea (0,25 tiempos)</li>
 </ul>
-Teniendo en cuenta esto, a continuación el código para hacer una escala con diferentes tiempos:
 
+Teniendo en cuenta esto, a continuación el código para hacer una escala con diferentes tiempos:
 
 <pre style="background: #f0f0f0; border: 1px dashed #CCCCCC;">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -162,23 +162,23 @@ Teniendo en cuenta esto, a continuación el código para hacer una escala con di
         console.log(value.note + " " + value.duration);
         synth.triggerAttackRelease(value.note, value.duration, time);
       }, cancion );
-      
+
       part.start(0);
       Tone.Transport.start();
     });
   &lt;/script&gt;
 &lt;/html&gt;</pre>
-El resultado es el siguiente (pulsa el botón para probar):
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/04-notas.html" width="140"></iframe></div>
+[04-notas.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/04-notas.html).
+
+## Ejemplo 05 (cumpleaños feliz)
+
 Ahora vamos a coger una partitura sencilla, la del cumpleaños feliz:
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="https://1.bp.blogspot.com/-CdZsiQ2sju0/XjdOzZZLeiI/AAAAAAAADis/d4jEpfPBGZ498iqwVqtTiOI00NQoMXA2gCLcBGAsYHQ/s1600/05-cumplea%25C3%25B1os.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="305" data-original-width="640" height="305" src="https://1.bp.blogspot.com/-CdZsiQ2sju0/XjdOzZZLeiI/AAAAAAAADis/d4jEpfPBGZ498iqwVqtTiOI00NQoMXA2gCLcBGAsYHQ/s640/05-cumplea%25C3%25B1os.jpg" width="640" /></a></div>
 
 Y la codificamos con ToneJS:
-
 
 <pre style="background: #f0f0f0; border: 1px dashed #CCCCCC;">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -198,9 +198,9 @@ Y la codificamos con ToneJS:
     document.querySelector("#notas").addEventListener("click", async () =&gt; {
 
       var notas = [
-        "C4", "C4", 
-        "D4", "C4", "F4", 
-        "E4", "C4", "C4", 
+        "C4", "C4",
+        "D4", "C4", "F4",
+        "E4", "C4", "C4",
         "D4", "C4", "G4",
         "F4", "C4", "C4",
         "C5", "A4", "F4",
@@ -208,12 +208,12 @@ Y la codificamos con ToneJS:
         "A4", "F4", "G4",
         "F4"];
       var duraciones = [
-        "8n", "8n", 
+        "8n", "8n",
         "4n", "4n", "4n",
         "2n", "8n", "8n",
         "4n", "4n", "4n",
-        "2n", "8n", "8n", 
-        "4n", "4n", "4n", 
+        "2n", "8n", "8n",
+        "4n", "4n", "4n",
         "4n", "4n", "8n", "8n",
         "4n", "4n", "4n",
         "2n"];
@@ -224,23 +224,23 @@ Y la codificamos con ToneJS:
         console.log(time + " " + value.note + " " + value.duration);
         synth.triggerAttackRelease(value.note, value.duration, time);
       }, cancion );
-      
+
       part.start(0);
       Tone.Transport.start();
     });
   &lt;/script&gt;
 &lt;/html&gt;</pre>
-El resultado es el siguiente (pulsa el botón para probar):
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/05-cumpleaños.html" width="200"></iframe></div>
+[05-cumpleaños.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/05-cumpleaños.html).
+
+## Ejemplo 06 (Star Wars)
+
 Y para terminar, hacemos lo mismo con la partitura de Star Wars:
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="https://1.bp.blogspot.com/-b2-JEFqCaic/XjdP7mf_4MI/AAAAAAAADi4/aEFEbBVVc2wot6n5VcofqnGAaFLKVQqqgCLcBGAsYHQ/s1600/06-starwars.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="478" data-original-width="640" height="478" src="https://1.bp.blogspot.com/-b2-JEFqCaic/XjdP7mf_4MI/AAAAAAAADi4/aEFEbBVVc2wot6n5VcofqnGAaFLKVQqqgCLcBGAsYHQ/s640/06-starwars.png" width="640" /></a></div>
 
 Aquí hay que tener en cuenta que los trisillos se codifican con una t, en vez de con una n (ejemplo 8t). Y para los puntillos hay que disminuuir su número (ejemplo 3n).
-
 
 <pre style="background: #f0f0f0; border: 1px dashed #CCCCCC;">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -259,7 +259,7 @@ Aquí hay que tener en cuenta que los trisillos se codifican con una t, en vez d
 
     document.querySelector("#notas").addEventListener("click", async () =&gt; {
 
-var notas = [
+      var notas = [
         "F3", "C4",
         "Bb3", "A3", "G3", "F4", "C4",
         "Bb3", "A3", "G3", "F4", "C4",
@@ -316,20 +316,17 @@ var notas = [
         console.log(time + " " + value.note + " " + value.duration);
         synth.triggerAttackRelease(value.note, value.duration, time);
       }, cancion );
-      
+
       part.start(0);
       Tone.Transport.start();
     });
   &lt;/script&gt;
 &lt;/html&gt;</pre>
-El resultado es el siguiente (pulsa el botón para probar):
 
-<div class="separator" style="clear: both; text-align: center;">
-<iframe frameborder="1" height="50" src="https://asanzdiego.github.io/taller-tonejs/ejemplos/06-starwars.html" width="140"></iframe></div>
-Espero os haya gustado ;-)
+[06-starwars.html](https://asanzdiego.github.io/taller-tonejs/ejemplos/06-starwars.html).
 
 ## Recursos
 
-<https://tonejs.github.io/>
+- <https://tonejs.github.io/>
 
-<https://www.guitarland.com/MusicTheoryWithToneJS/TonejsSetup.html>
+- <https://www.guitarland.com/MusicTheoryWithToneJS/TonejsSetup.html>
